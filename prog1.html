@@ -1,0 +1,93 @@
+     <!DOCTYPE html>
+     <html lang="en" dir="ltr">
+       <head>
+         <meta charset="utf-8">
+         <title>Simple Calculator</title>
+         <style>
+           * {
+             font-size: 25px;
+             padding: 10px;
+           }
+           table, td, th {
+             border: 10px solid hotpink;
+             width: 33%;
+             text-align: center;
+             background-color: floralwhite;
+           }
+           table {
+             margin:auto;
+           }
+           input {
+             text-align: center;
+             width: 300px;
+           }
+         </style>
+       </head>
+       <body>
+         <script>
+           function calculate(id) {
+             var val1 = parseFloat(document.getElementById("value1").value);
+             var val2 = parseFloat(document.getElementById('value2').value);
+             var result = 0;
+
+             if (isNaN(val1) || isNaN(val2)) {
+               document.getElementById("answer").value = "error";
+               document.getElementById("answer").style.color = "red";
+               document.getElementById("answer").style.background = "yellow";
+             } else {
+               if (id == "+") {
+                 result = val1 + val2;
+               } else if (id == "-") {
+                 result = val1 - val2;
+               } else if (id == "*") {
+                 result = val1 * val2;
+               } else if (id == "/") {
+                 result = val1 / val2;
+               }
+               document.getElementById("answer").value = result;
+               document.getElementById("answer").style.color = "white";
+               document.getElementById("answer").style.background = "green";
+             }
+           }
+
+           function cls() {
+             document.getElementById("answer").style.background = "blue";
+             clsdis("answer");
+             clsdis("value1");
+             clsdis("value2");
+           }
+
+           function clsdis(id) {
+             document.getElementById(id).value = "";
+           }
+         </script>
+         <table>
+           <tr>
+             <th colspan="2">SIMPLE CALCULATOR</th>
+           </tr>
+           <tr>
+             <td>Value 1</td>
+             <td><input type="text" id="value1"></td>
+           </tr>
+           <tr>
+             <td>Value 2</td>
+             <td><input type="text" id="value2"></td>
+           </tr>
+           <tr>
+             <td><input type="button" value="Addition" id="+" onclick="calculate(this.id)"></td>
+             <td><input type="button" value="Subtraction" id="-" onclick="calculate(this.id)"></td>
+           </tr>
+           <tr>
+             <td><input type="button" value="Multiplication" id="*" onclick="calculate(this.id)"></td>
+             <td><input type="button" value="Division" id="/" onclick="calculate(this.id)"></td>
+           </tr>
+           <tr>
+             <td>Answer:</td>
+             <td><input type="text" value=""disabled  id="answer" ></td>
+           </tr>
+           <tr>
+             <td colspan="2"><input type="button" value="Clear Values" id="cls" onclick="cls()"></td>
+           </tr>
+         </table>
+       </body>
+     </html>

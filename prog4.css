@@ -1,0 +1,68 @@
+/* Global Styling */
+body {
+    font-family: 'Georgia', serif; /* Elegant serif font for a professional look */
+    background-color: floralwhite; /* Subtle off-white background */
+    color: black;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.8; /* Enhanced readability */
+}
+
+/* Styling for USN */
+USN {
+    display: block;
+    color: royalblue; /* Classic royal blue for prominence */
+    font-size: 35px;
+    font-weight: bold;
+    text-transform: uppercase; /* All caps for emphasis */
+    text-align: center;
+    border-bottom: 2px solid royalblue; /* Underline effect */
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+
+/* Styling for NAME, COLLEGE, BRANCH, YEAR, EMAIL */
+NAME, COLLEGE, BRANCH, YEAR, EMAIL {
+    display: block;
+    background-color: lightgreen; /* Light green background for freshness */
+    color: darkgreen; /* Contrasting dark green text */
+    font-size: 28px;
+    margin: 15px auto; /* Center aligned block */
+    padding: 10px 15px;
+    width: 30%; /* Makes it consistent and centered */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    text-align: center; /* Align text centrally */
+    font-weight: 600;
+    letter-spacing: 1px; /* Slight spacing for modern look */
+}
+
+/* Adding hover effects for interactive feel */
+NAME:hover, COLLEGE:hover, BRANCH:hover, YEAR:hover, EMAIL:hover {
+    background-color: palegoldenrod; /* Highlight with pale gold */
+    color: darkslategray; /* Darker, sophisticated text color */
+    transform: scale(1.02); /* Slight zoom effect */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Styling EMAIL specifically */
+EMAIL {
+    background-color: lavender; /* Light lavender background */
+    color: indigo; /* Deep indigo for uniqueness */
+    font-style: italic; /* Makes it stand out */
+    font-size: 26px;
+}
+
+/* Optional: Add subtle separators between sections */
+NAME, COLLEGE, BRANCH, YEAR, EMAIL {
+    border-left: 5px solid darkolivegreen; /* Accent border for structure */
+    padding-left: 15px;
+}
+
+/* Footer styling if applicable */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 18px;
+    color: gray;
+}

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form with All Input Types</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .form-container {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 500px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+            max-height: 90vh;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="password"], input[type="email"],
+        input[type="tel"], input[type="url"], input[type="search"],
+        input[type="number"], input[type="range"], input[type="file"],
+        input[type="date"], input[type="datetime-local"], input[type="color"],
+        input[type="month"], input[type="week"], input[type="time"],
+        input[type="button"], input[type="submit"], input[type="reset"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+        input[type="radio"], input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        input[type="button"], input[type="submit"], input[type="reset"] {
+            font-size: 16px;
+            color: #fff;
+            background-color: #28a745;
+            border: none;
+            cursor: pointer;
+            padding: 10px 15px;
+            margin-top: 10px;
+        }
+        input[type="button"]:hover, input[type="submit"]:hover, input[type="reset"]:hover {
+            background-color: #218838;
+        }
+        .output {
+            display: none;
+            background-color: #e8f5e9;
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 15px;
+            font-size: 14px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Demo Form with All Input Types</h2>
+    <form id="demoForm">
+        <div class="form-group">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" min="1" max="120" required>
+        </div>
+
+        <div class="form-group">
+            <label for="birthdate">Birth Date:</label>
+            <input type="date" id="birthdate" name="birthdate" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="color">Favorite Color:</label>
+            <input type="color" id="color" name="color">
+        </div>
+
+        <div class="form-group">
+            <label for="datetime">Appointment Date & Time:</label>
+            <input type="datetime-local" id="datetime" name="datetime">
+        </div>
+
+        <div class="form-group">
+            <label for="profilePic">Upload Profile Picture:</label>
+            <input type="file" id="profilePic" name="profilePic">
+        </div>
+
+        <div class="form-group">
+            <label>Gender:</label>
+            <input type="radio" id="male" name="gender" value="Male" required>
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="Female">
+            <label for="female">Female</label>
+        </div>
+
+        <div class="form-group">
+            <label>Subscribe to Newsletter:</label>
+            <input type="checkbox" id="subscribe" name="subscribe">
+            <label for="subscribe">Yes</label>
+        </div>
+
+        <div class="form-group">
+            <label for="month">Birth Month:</label>
+            <input type="month" id="month" name="month">
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone">
+        </div>
+
+        <div class="form-group">
+            <label for="website">Personal Website:</label>
+            <input type="url" id="website" name="website">
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+
+        <div class="form-group">
+            <label for="search">Search:</label>
+            <input type="search" id="search" name="search">
+        </div>
+
+        <div class="form-group">
+            <label for="range">Interest Level (0-10):</label>
+            <input type="range" id="range" name="range" min="0" max="10">
+        </div>
+
+        <div class="form-group">
+            <label for="week">Preferred Week for Appointment:</label>
+            <input type="week" id="week" name="week">
+        </div>
+
+        <div class="form-group">
+            <label for="time">Preferred Time:</label>
+            <input type="time" id="time" name="time">
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+            <input type="button" value="View Submitted Details" onclick="toggleOutput()">
+        </div>
+    </form>
+
+    <div class="output" id="output">
+        <h3>Submitted Details</h3>
+        <p><strong>Name:</strong> <span id="outputName"></span></p>
+        <p><strong>Age:</strong> <span id="outputAge"></span></p>
+        <p><strong>Birth Date:</strong> <span id="outputBirthdate"></span></p>
+        <p><strong>Email:</strong> <span id="outputEmail"></span></p>
+        <p><strong>Favorite Color:</strong> <span id="outputColor"></span></p>
+        <p><strong>Appointment Date & Time:</strong> <span id="outputDatetime"></span></p>
+        <p><strong>Gender:</strong> <span id="outputGender"></span></p>
+        <p><strong>Subscribe:</strong> <span id="outputSubscribe"></span></p>
+        <p><strong>Birth Month:</strong> <span id="outputMonth"></span></p>
+        <p><strong>Phone:</strong> <span id="outputPhone"></span></p>
+        <p><strong>Website:</strong> <span id="outputWebsite"></span></p>
+        <p><strong>Search:</strong> <span id="outputSearch"></span></p>
+        <p><strong>Interest Level:</strong> <span id="outputRange"></span></p>
+        <p><strong>Preferred Week:</strong> <span id="outputWeek"></span></p>
+        <p><strong>Preferred Time:</strong> <span id="outputTime"></span></p>
+    </div>
+</div>
+
+<script>
+    const form = document.getElementById('demoForm');
+    const output = document.getElementById('output');
+
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        document.getElementById('outputName').innerText = document.getElementById('name').value;
+        document.getElementById('outputAge').innerText = document.getElementById('age').value;
+        document.getElementById('outputBirthdate').innerText = document.getElementById('birthdate').value;
+        document.getElementById('outputEmail').innerText = document.getElementById('email').value;
+        document.getElementById('outputColor').innerText = document.getElementById('color').value;
+        document.getElementById('outputDatetime').innerText = document.getElementById('datetime').value;
+        document.getElementById('outputGender').innerText = document.querySelector('input[name="gender"]:checked')?.value || 'Not specified';
+        document.getElementById('outputSubscribe').innerText = document.getElementById('subscribe').checked ? 'Yes' : 'No';
+        document.getElementById('outputMonth').innerText = document.getElementById('month').value;
+        document.getElementById('outputPhone').innerText = document.getElementById('phone').value;
+        document.getElementById('outputWebsite').innerText = document.getElementById('website').value;
+        document.getElementById('outputSearch').innerText = document.getElementById('search').value;
+        document.getElementById('outputRange').innerText = document.getElementById('range').value;
+        document.getElementById('outputWeek').innerText = document.getElementById('week').value;
+        document.getElementById('outputTime').innerText = document.getElementById('time').value;
+
+        output.style.display = 'block';
+    });
+
+    function toggleOutput() {
+        if (output.style.display === 'none' || output.style.display === '') {
+            output.style.display = 'block';
+        } else {
+            output.style.display = 'none';
+        }
+    }
+</script>
+
+</body>
+</html>

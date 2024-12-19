@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>program 3</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var str =prompt("enter the input(either nunber or a string):","");
+
+     //check if input is a number
+      if(!isNaN(str)){
+        var num,rev=0,remainder;
+        num=parseInt(str);
+
+        //reverse the number
+        while(num!=0){
+          remainder=num%10;
+          num=Math.floor(num/10);//corrected division
+          rev =rev*10+remainder;
+        }
+        alert("reverse of" + str + "is" + rev);
+      } else {
+        //convert dtring to uppercase and find the left most vowel
+        str=str.toUpperCase();
+        var foundVowel=false;
+
+        for(var i=0;i<str.length;i++){
+          var chr = str.charAt(i);
+          if(chr == 'A' || chr =='E' || chr=='I' || chr=='O'|| chr=='U'){
+            alert("the position of the vowel is "+(i+1));
+            foundVowel=true;
+            break;
+          }
+        }
+        //if no vowel is foundVowel
+        if(!foundVowel){
+          alert("no vowel found in the entered string:"+ str);
+        }
+      }
+      </script>
+
+  </body>
+</html>

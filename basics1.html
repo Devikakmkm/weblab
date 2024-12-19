@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Schedule Table</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: lightgray;
+        }
+
+        .table-container {
+            width: 90%;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: small;
+            text-align: center;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid darkslategray;
+        }
+
+        thead th {
+            background-color: black;
+            color: white;
+            font-weight: bold;
+        }
+
+        td.vertical {
+            writing-mode: vertical-rl;
+        }
+
+        .day {
+            font-weight: bolder;
+            background-color: lightgray;
+            width: 100px;
+            color:black;
+        }
+
+        .break {
+            background-color: gainsboro;
+            color: darkslategray;
+            font-style: italic;
+        }
+
+        .student-development {
+            background-color: lightcoral;
+            font-weight: bold;
+            color: darkgreen;
+        }
+
+        td, th {
+            color: dimgray;
+        }
+    </style>
+</head>
+<body>
+
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Day</th>
+                <th>I<br> 8:30-9:30</th>
+                <th>II<br> 9:30-10:30</th>
+                <th>10:30-10:50</th>
+                <th>III<br>I 10:50-11:50</th>
+                <th>IV<br> 11:50-12:50</th>
+                <th>12:50-1:45</th>
+                <th>V<br> 1:45-2:40</th>
+                <th>VI<br> 2:40-3:35</th>
+                <th>VII<br> 3:35-4:30</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="day">Monday</td>
+                <td>TOC</td>
+                <td>CN</td>
+                <td class="vertical break" rowspan="5">TEA BREAK</td>
+                <td>Placement Training</td>
+                <td>PE-1</td>
+                <td class="vertical break" rowspan="6">LUNCH BREAK</td>
+                <td>Mini Project Work</td>
+                <td>Proctoring</td>
+                <td>Mini Project Work</td>
+            </tr>
+            <tr>
+                <td class="day">Tuesday</td>
+                <td>SEP</td>
+                <td>PE-1</td>
+                <td>CN</td>
+                <td>TOC</td>
+                <td>Mandatory Course (NSS, Yoga, PE, NCC, MC)</td>
+                <td>Mini Project Work</td>
+                <td>CN Lab</td>
+            </tr>
+            <tr>
+                <td class="day">Wednesday</td>
+                <td>RM/PIR</td>
+                <td>EVS</td>
+                <td>TOC</td>
+                <td>Placement Training</td>
+                <td>Mini Project Work</td>
+                <td>Student Development Program</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="day">Thursday</td>
+                <td>TOC</td>
+                <td>PE-1</td>
+                <td>WEB Lab</td>
+                <td>SEP</td>
+                <td>Mini Project Work</td>
+                <td>CN Lab</td>
+                <td>Mini Project Work</td>
+            </tr>
+            <tr>
+                <td class="day">Friday</td>
+                <td>SEP</td>
+                <td>RM/PIR</td>
+                <td>CN</td>
+                <td>TOC</td>
+                <td>Mini Project Work</td>
+                <td>CN Lab</td>
+                <td>Mini Project Work</td>
+            </tr>
+            <tr>
+                <td class="day">Saturday</td>
+                <td colspan="5" class="student-development">Student Development Program</td>
+                  <td colspan="5" class="student-development">Student Development Program</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
